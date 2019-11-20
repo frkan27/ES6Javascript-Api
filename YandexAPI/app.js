@@ -1,3 +1,5 @@
+
+
 //Prottype,Ajax,callback
 
 eventListeners();
@@ -8,9 +10,11 @@ function eventListeners() {
     //Change -dildeğiştirme
     document.getElementById("language").onchange = function () {
         //Arayüz işlemleri
+        ui.changeUI();
     }
 
 }
+const ui=new UI();
 //index.html den word girceğimiz yerin id sini seçip değerini Translate fonksiyonuna gönderiyoruz...
 const translate = new Translate(document.getElementById("word").value, document.getElementById("language").value);
 function translateWord(e) {
@@ -21,7 +25,7 @@ function translateWord(e) {
          if(err){
              console.log(err);
          }else{
-             console.log(response);
+             ui.displayTranslate(response);
          }
     });
     e.preventDefault();//sayfamızın yenilenmesini engellemek için. default durumunu egellemek.
