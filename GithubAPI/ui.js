@@ -5,6 +5,8 @@ class UI {
         this.repoDiv = document.getElementById("repos");
         this.lastUsers = document.getElementById("last-users");//ul mi seçiyorum
         this.inputField = document.getElementById("githubname");
+        //card bodynın altına hata mesajı ekelemek için seçtik
+        this.cardBody = document.querySelector(".card-body");//classa göre seçtik.
     }
     clearInput() {
         this.inputField.value = "";
@@ -52,7 +54,25 @@ class UI {
                             
                       </div>
                 </div> 
-`;
+         `;
+    }
+    //input girdiğimiz alan card body. onun altında hata olduğu zaman hata mesajı göndermek istiyorum..
+
+    showError(message) {
+        //div oluşturuyoruz
+        const div = document.createElement("div");
+
+        div.className = "alert alert-danger";
+        div.textContent = message;
+
+        this.cardBody.appendChild(div);//divimizi altına ekledik
+
+        setTimeout(() => {
+            div.remove();
+        }, 2000);
+
+
+
     }
 
 

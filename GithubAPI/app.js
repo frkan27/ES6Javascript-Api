@@ -31,14 +31,13 @@ function getData(e) {//eventimizi gönderiyoruz.
         github.getGithubData(username)//username ile inputa girilen değeri gönderiyoruz...
             .then(response => {//alakasız değerler girdiğimizde userın json unda message:"Not found" yazısı çıkıyor. onu yakallayıp hata mesajı yazdıralım.
                 if (response.user.message === "Not Found") {
-                    //Hata mesajı
-                    console.log("Hata");
+                    ui.showError("Kullanıcı bulunamadı")
                 }
                 else {
                     ui.showUserInfo(response.user);
                 }
             })
-            .catch(err => console.log(err));
+            .catch(err => ui.showError(err));
 
 
     }
