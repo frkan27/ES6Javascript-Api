@@ -127,6 +127,13 @@ class UI {
 
 
     }
+    clearAllSearcedFromUI(){//Li leri silicez
+        while(this.lastUsers.firstElementChild!==null){
+            this.lastUsers.removeChild(this.lastUsers.firstElementChild);
+            //ul un içinde çocuk varmı diye bakıyor.sırayla ilkini siliyor.
+        }
+
+    }
 
 
 }

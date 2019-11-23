@@ -49,8 +49,16 @@ function getData(e) {//eventimizi gönderiyoruz.
     e.preventDefault();//Sayfamızın yenilenmesini önlemek için.
 }
 
-function clearAllSearched() {
+function clearAllSearched() {//butona tıkladığında
     //tüm aramaları sil.
+if(confirm("Emin Misiniz?")){
+Storage.clearAllSearchedUsersFromStorage();//Storage dan temizlicek
+ui.clearAllSearcedFromUI();
+
+}
+
+
+
 }
 
 function getAllSearch() {
