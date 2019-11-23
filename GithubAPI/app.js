@@ -35,6 +35,7 @@ function getData(e) {//eventimizi gönderiyoruz.
                 }
                 else {
                     ui.showUserInfo(response.user);
+                    ui.showRepoInfo(response.repo);
                 }
             })
             .catch(err => ui.showError(err));
