@@ -1,5 +1,5 @@
 class UI {
-    constructor(firstSelect, secondSelect) {
+    constructor(firstSelect, secondSelect) {//parametre isimlerini rastgele girebiliriz...
         this.firstSelect = firstSelect;//this.firstselect bizim elementimiz.
         this.secondSelect = secondSelect;
 
