@@ -34,6 +34,8 @@ function getData(e) {//eventimizi gönderiyoruz.
                     ui.showError("Kullanıcı bulunamadı")
                 }
                 else {
+                    ui.addSearchedUsertoUI(username);//Storageden önce eklememiz lazım.
+                    Storage.addSearchedUsertoStorage(username);
                     ui.showUserInfo(response.user);
                     ui.showRepoInfo(response.repo);
                 }
@@ -53,5 +55,13 @@ function clearAllSearched() {
 
 function getAllSearch() {
     //Aramaları storagedan al ui a ekle...
+
+    let users=Storage.getSearchUsersFromStorage();
+let result="";
+    users.forEach(user=>{
+
+        result+=`<li class="list-group-item">${user}</li>`;
+    });
+lastUsers.innerHTML=result;
 
 }

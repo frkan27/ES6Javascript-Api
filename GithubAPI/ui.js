@@ -75,11 +75,11 @@ class UI {
 
     }
 
-    showRepoInfo(repos){//Bilgilerimiz array şeklinde gelicek...
-        this.repoDiv.innerHTML= "";//ilk başta temizliyoruz..
+    showRepoInfo(repos) {//Bilgilerimiz array şeklinde gelicek...
+        this.repoDiv.innerHTML = "";//ilk başta temizliyoruz..
 
         repos.forEach(repo => {//Arrayin içinde gezinebiliriz.
-            this.repoDiv.innerHTML +=`
+            this.repoDiv.innerHTML += `
             <div class="mb-2 card-body">
                     <div class="row">
                         <div class="col-md-2">
@@ -106,7 +106,27 @@ class UI {
 
     }
 
+    addSearchedUsertoUI(username) {
+        let users = Storage.getSearchUsersFromStorage();
 
+        //Arrayi aldık.Username storage da varsa tekrardan arayüze eklemicez.
+
+        if (users.indexOf(username) === -1) {//yoktur yani ekeleyebiliri<
+            //<li class="list-group-item">asdaskdjkasjkşdjşasjd</li>
+
+            const li = document.createElement("li");
+
+            li.className = "list-group-item";
+            li.textContent = username;
+
+            this.lastUsers.appendChild(li);
+
+
+        }
+
+
+
+    }
 
 
 }
