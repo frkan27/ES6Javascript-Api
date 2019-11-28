@@ -1,4 +1,4 @@
-### ES6Javascript-Api
+# ES6Javascript-Api
 
 ## ExchangeApi
 
@@ -12,7 +12,7 @@
 > - Girilen kelime İngilizce, Almanca ve İspanyolca dillerine çevriliyor.
 > - Ajax, Prototype ve Callback function kullanıldı.
 
-### GithubApi
+## GithubApi
 
 > - https://api.github.com/users/ den Get isteği ile Rest Api'den json data çekildi.
 > - Kullanıcı Adı girilerek kişinin bilgileri ve repositoryleri listeleniyor.
